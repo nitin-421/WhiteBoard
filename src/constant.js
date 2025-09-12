@@ -1,0 +1,66 @@
+export const TOOL_ITEMS = {
+  LINE: "LINE",
+  RECTANGLE: "RECTANGLE",
+  ELLIPSE: "ELLIPSE",
+  ARROW: "ARROW",
+  BRUSH: "BRUSH",
+  ERASER: "ERASER",
+}
+
+export const TOOL_ACTION_TYPES={
+  NONE: "NONE",
+  DRAWING: "DRAWING",
+  ERASING: "ERASING",
+}
+
+export const BOARD_ACTIONS = {
+  CHANGE_TOOL: "CHANGE_TOOL",
+  DRAW_DOWN: "DRAW_DOWN",
+  DRAW_MOVE: "DRAW_MOVE",
+  DRAW_UP: "DRAW_UP",
+  CHANGE_ACTION_TYPE: "CHANGE_ACTION_TYPE",
+  ERASE: "ERASE",
+};
+
+export const COLORS = {
+  BLACK: "#000000",
+  WHITE: "#ffffff",
+  RED: "#ff0000",
+  GREEN: "#00ff00",
+  YELLOW: "#ffff00",
+  BLUE: "#0000ff",
+  ORANGE: "#ffa500",
+}
+
+export const TOOLBOX_ACTIONS = {
+  CHANGE_STROKE: "CHANGE_STROKE",
+  CHANGE_FILL: "CHANGE_FILL",
+  CHANGE_SIZE: "CHANGE_SIZE",
+};
+
+export const FILL_TOOL_ITEMS = [
+  TOOL_ITEMS.RECTANGLE,
+  TOOL_ITEMS.ELLIPSE,
+];
+
+export const STROKE_TOOL_ITEMS = [
+  TOOL_ITEMS.LINE,
+  TOOL_ITEMS.ARROW, 
+  TOOL_ITEMS.RECTANGLE,
+  TOOL_ITEMS.ELLIPSE,
+  TOOL_ITEMS.BRUSH
+];
+
+export const SIZE_TOOL_ITEMS = [
+  TOOL_ITEMS.LINE,
+  TOOL_ITEMS.ARROW, 
+  TOOL_ITEMS.RECTANGLE,
+  TOOL_ITEMS.ELLIPSE,
+  // TOOL_ITEMS.BRUSH
+];
+
+export const ARROW_LEN = 20; // Length of the arrowhead
+export const RANGE={
+  LINE: 0.1,
+  RECTANGLE : 1
+}

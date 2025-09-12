@@ -1,0 +1,60 @@
+.container {
+	padding: 16px;
+}
+
+.selectOptionContainer.size {
+	top: 40%;
+	left: 16px;
+}
+.selectOptionContainer.stroke {
+  top: 50%;
+  left: 16px;
+}
+
+.selectOptionContainer.fill {
+  top: 60%;
+  left: 16px;
+}
+
+
+
+.selectOptionContainer {
+	position: fixed;
+	top: 50%;
+	left: 16px;
+	transform: translateY(-50%);
+
+	background: white;
+	border: 1px solid #ccc;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	width: fit-content;
+	padding: 8px 12px;
+	display: inline-block;
+}
+
+.toolBoxLabel {
+	font-size: 14px;
+	font-weight: 500;
+	margin-bottom: 8px;
+	color: #333;
+}
+
+.colorsContainer {
+	display: flex;
+	gap: 6px;
+}
+
+.colorbox {
+	width: 20px;
+	height: 20px;
+	border-radius: 3px;
+	cursor: pointer;
+	border: 2px solid transparent;
+	transition: border 0.2s ease;
+}
+
+.activeColorBox {
+	margin: 1px;
+	border: 2px solid rgb(64, 129, 250);
+}

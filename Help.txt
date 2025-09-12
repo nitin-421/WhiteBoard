@@ -1,0 +1,35 @@
+1) adding tools :
+
+
+
+2) stroke/fill/size :
+	-Board>index.js : add context (toolboxState) in toolboxContext and pass them in mousedown & mouseup
+	-ToolboxProvider : create stroke/fill fxns and pass them via toolboxContextValue, also create switch cases for each of them
+	-Tool.js : pass them in createElement and element with additional conditions
+	+ Constant.js : add the respective values in the file
+
+3) Brush : 
+	- Add tool in Tool.js and Constant.js.
+	- Tool.js : 
+		install npm perfect-freehand to get getStroke
+		write getSvgPathFromStroke code (given)
+		Add switch case for brush add new brush element path : new Path2D
+	-BoardProvider : 
+		drawMove : add conditions for brush separately
+
+4) Erase Tool:
+	-Constant.js add brush tool item
+	-add tool eraser in Tool.js
+	-BoardProvider
+		Add condition if eraser then erasing
+		Add action erase
+
+5) Text Tool :
+	-toolbar adding	
+	-tool items (constant.js)
+	-boardMousehandler (up/down) add case for Text draw down
+	-tool.js - add cse for text
+	-Board/index.js
+		in return add case for writing and textArea 
+		Adding side effect while change in toolactiontype if action is writing to focus oon text area.
+	-textarea with toolactiontype writing 
