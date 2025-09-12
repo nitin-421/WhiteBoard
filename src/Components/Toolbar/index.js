@@ -47,8 +47,8 @@ const Toolbar = () => {
         <LuCircle />
       </div> {/** Ellipse Tool */}
       <div className={
-        cx(classes.toolItem,{[classes.active]:activeToolItem==="ELLIPSE"})}
-        onClick={() => handleToolItemClick("ELLIPSE")}
+        cx(classes.toolItem,{[classes.active]:activeToolItem==="TEXT"})}
+        onClick={() => handleToolItemClick("TEXT")}
       >
         <FaFont  />
       </div> {/** Text Tool */}
