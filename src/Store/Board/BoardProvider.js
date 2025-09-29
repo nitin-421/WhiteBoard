@@ -81,6 +81,7 @@ const boardReducer = (state,action) => {
           break;
       }
     }
+    break;
     case BOARD_ACTIONS.ERASE: {
       const {clientX, clientY} = action.payload;
       console.log("Erasing at:",clientX, clientY);

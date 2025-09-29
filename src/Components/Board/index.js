@@ -2,7 +2,6 @@ import { useContext, useEffect, useLayoutEffect, useRef } from "react";
 import rough from "roughjs";
 import BoardContext from "../../Store/Board/board-context";
 import {
-  // TOOL_ACTION_TYPES,
   TOOL_ITEMS,
 } from "../../constant";
 import toolboxContext from "../../Store/Tool/toolbox-context";
@@ -71,15 +70,6 @@ function Board() {
 
   // ****************/
   return (
-    <>
-      {/* <toolActionType === TOOL_ACTION_TYPES.WRITING && textarea
-        type="text"
-        style={{
-          top = elements[state.elements.length-1].y1,
-          left = elements[state.elements.length-1].x1,
-          position: "absolute",
-        }}
-      /> */}
       <div className="App">
         <canvas
           id="canvas"
@@ -89,7 +79,6 @@ function Board() {
           onMouseUp={handleMouseUp}
         />
       </div>
-    </>
   );
 }
 

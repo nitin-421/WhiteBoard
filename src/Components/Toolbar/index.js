@@ -46,12 +46,12 @@ const Toolbar = () => {
       >
         <LuCircle />
       </div> {/** Ellipse Tool */}
-      {/* <div className={
+       <div className={
         cx(classes.toolItem,{[classes.active]:activeToolItem==="TEXT"})}
         onClick={() => handleToolItemClick("TEXT")}
       >
         <FaFont  />
-      </div> * Text Tool */}
+      </div> {/* Text Tool */}
       <div className={
         cx(classes.toolItem,{[classes.active]:activeToolItem==="ERASER"})}
         onClick={() => handleToolItemClick("ERASER")}
