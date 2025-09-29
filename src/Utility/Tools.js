@@ -112,7 +112,10 @@ export const isNearestElement= (element, x, y) => {
 		case TOOL_ITEMS.BRUSH:
 			const context = document.getElementById("canvas").getContext("2d");
 			return context.isPointInPath(element.path,x,y);
-
+		
+		case TOOL_ITEMS.TEXT:
+			element.text = "" ;
+			return element;
 		default:
 			throw new Error("Unknown element type: " + element);
 	}

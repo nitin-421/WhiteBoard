@@ -81,8 +81,6 @@ const boardReducer = (state,action) => {
           break;
       }
     }
-    break;
-
     case BOARD_ACTIONS.ERASE: {
       const {clientX, clientY} = action.payload;
       console.log("Erasing at:",clientX, clientY);
@@ -103,7 +101,7 @@ const boardReducer = (state,action) => {
 };
 
 const initialBoardState = {
-  activeToolItem: TOOL_ITEMS.LINE,
+  activeToolItem: TOOL_ITEMS.BRUSH,
   toolActionType: TOOL_ACTION_TYPES.NONE,
   elements: [],
 };
@@ -121,6 +119,15 @@ const BoardProvider = ({ children }) => {
   };
 
   const mouseDownHandler = (event,toolboxState)=>{
+    // if(boardState.activeToolItem===TOOL_ITEMS.TEXT){
+    //   dispatchBoardAction({
+    //     type: BOARD_ACTIONS.CHANGE_ACTION_TYPE,
+    //     payload :{
+    //       actionType: TOOL_ACTION_TYPES.WRITING,
+    //     }
+    //   });
+    //   return;
+    // }
     const {clientX,clientY} = event;
     if(boardState.activeToolItem===TOOL_ITEMS.ERASER){
       dispatchBoardAction({

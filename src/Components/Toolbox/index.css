@@ -1,9 +1,9 @@
-.container {
+/* .container {
 	padding: 16px;
-}
+} */
 
 .selectOptionContainer.size {
-	top: 40%;
+	top: 38%;
 	left: 16px;
 }
 .selectOptionContainer.stroke {
@@ -12,7 +12,7 @@
 }
 
 .selectOptionContainer.fill {
-  top: 60%;
+  top: 62%;
   left: 16px;
 }
 

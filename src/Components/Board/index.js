@@ -1,37 +1,38 @@
-import {useContext, useEffect, useLayoutEffect, useRef } from "react";
+import { useContext, useEffect, useLayoutEffect, useRef } from "react";
 import rough from "roughjs";
 import BoardContext from "../../Store/Board/board-context";
-import { 
+import {
   // TOOL_ACTION_TYPES,
-  TOOL_ITEMS } from "../../constant";
+  TOOL_ITEMS,
+} from "../../constant";
 import toolboxContext from "../../Store/Tool/toolbox-context";
-
 
 function Board() {
   const canvasRef = useRef();
-  const {
-    elements, 
-    mouseDownHandler, 
-    mouseMoveHandler, 
-    mouseUpHandler,  
-  } = useContext(BoardContext);
+  const { elements, mouseDownHandler, mouseMoveHandler, mouseUpHandler } =
+    useContext(BoardContext);
 
-  const {toolboxState} = useContext(toolboxContext); // stroke/fill color 1 then to BoardProvider
+  const { toolboxState } = useContext(toolboxContext); // stroke/fill color 1 then to BoardProvider
 
-  useEffect(()=>{ 
+  useEffect(() => {
     const canvas = canvasRef.current;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  },[]);
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+    return () => window.removeEventListener("resize", resizeCanvas);
+  }, []);
 
   useLayoutEffect(() => {
     const canvas = canvasRef.current;
-    const context=canvas.getContext("2d");
+    const context = canvas.getContext("2d");
     context.save();
     const roughCanvas = rough.canvas(canvas);
 
-    elements.forEach(element => {
-      switch(element.type){
+    elements.forEach((element) => {
+      switch (element.type) {
         case TOOL_ITEMS.ARROW:
         case TOOL_ITEMS.LINE:
         case TOOL_ITEMS.RECTANGLE:
@@ -48,39 +49,48 @@ function Board() {
       }
     });
 
-    return()=>{
+    return () => {
       context.clearRect(0, 0, canvas.width, canvas.height);
-    }
-  },[elements]);
+    };
+  }, [elements]);
 
+  // /***************** fxns are directly passed
 
-  // /***************** fxns are directly passed  
-   
-  const handleMouseDown = (event) =>{
-    mouseDownHandler(event,toolboxState); // stroke/fill color 2
+  const handleMouseDown = (event) => {
+    mouseDownHandler(event, toolboxState); // stroke/fill color 2
   };
 
-  const handleMouseMove = (event) =>{
+  const handleMouseMove = (event) => {
     // if(toolActionType === TOOL_ACTION_TYPES.DRAWING)
-      mouseMoveHandler(event ); // stroke/fill color 2
+    mouseMoveHandler(event); // stroke/fill color 2
   };
 
-  const handleMouseUp = () =>{
-      mouseUpHandler();
+  const handleMouseUp = () => {
+    mouseUpHandler();
   };
 
   // ****************/
   return (
-    <div className="App">
-      <canvas 
-      id="canvas"
-      ref={canvasRef} 
-      onMouseDown={handleMouseDown} 
-      onMouseMove={handleMouseMove} 
-      onMouseUp={handleMouseUp}
-    />
-    </div>
-  )
+    <>
+      {/* <toolActionType === TOOL_ACTION_TYPES.WRITING && textarea
+        type="text"
+        style={{
+          top = elements[state.elements.length-1].y1,
+          left = elements[state.elements.length-1].x1,
+          position: "absolute",
+        }}
+      /> */}
+      <div className="App">
+        <canvas
+          id="canvas"
+          ref={canvasRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+        />
+      </div>
+    </>
+  );
 }
 
 export default Board;
