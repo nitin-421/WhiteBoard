@@ -8,8 +8,10 @@ import toolboxContext from "../../Store/Tool/toolbox-context";
 
 function Board() {
   const canvasRef = useRef();
-  const { elements, mouseDownHandler, mouseMoveHandler, mouseUpHandler } =
-    useContext(BoardContext);
+  const {elements,
+    mouseDownHandler, 
+    mouseMoveHandler, 
+    mouseUpHandler } =useContext(BoardContext);
 
   const { toolboxState } = useContext(toolboxContext); // stroke/fill color 1 then to BoardProvider
 

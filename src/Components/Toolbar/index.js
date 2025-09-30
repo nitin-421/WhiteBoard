@@ -9,11 +9,11 @@ import {
   LuBrush,
   LuEraser,
 } from "react-icons/lu";
-import { FaFont } from "react-icons/fa";
+import { FaUndo ,FaRedo  } from "react-icons/fa";
 import BoardContext from '../../Store/Board/board-context';
 
 const Toolbar = () => {
-  const {activeToolItem, handleToolItemClick } = useContext(BoardContext);
+  const {activeToolItem, handleToolItemClick, undo, redo } = useContext(BoardContext);
   return (
     <div className={classes.container}>
       <div className={
@@ -58,7 +58,12 @@ const Toolbar = () => {
       >
         <LuEraser />
       </div> {/** Eraser Tool */}
-
+      <div className={classes.toolItem} onClick={undo}>
+        <FaUndo  />
+      </div> {/** Undo Tool */}
+      <div className={classes.toolItem} onClick={redo}>
+        <FaRedo  />
+      </div> {/** Redo Tool */}
     </div>
   )
 }

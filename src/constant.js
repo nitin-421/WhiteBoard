@@ -22,6 +22,8 @@ export const BOARD_ACTIONS = {
   DRAW_UP: "DRAW_UP",
   CHANGE_ACTION_TYPE: "CHANGE_ACTION_TYPE",
   ERASE: "ERASE",
+  UNDO: "UNDO",
+  REDO: "REDO",
 };
 
 export const COLORS = {
