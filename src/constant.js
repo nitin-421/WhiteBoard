@@ -28,7 +28,14 @@ export const BOARD_ACTIONS = {
 
 export const COLORS = {
   BLACK: "#000000",
-  WHITE: "#ffffff",
+  RED: "#ff0000",
+  GREEN: "#00ff00",
+  YELLOW: "#ffff00",
+  BLUE: "#0000ff",
+  ORANGE: "#ffa500",
+}
+export const FILLCOLORS = {
+  BLACK: "#000000",
   RED: "#ff0000",
   GREEN: "#00ff00",
   YELLOW: "#ffff00",

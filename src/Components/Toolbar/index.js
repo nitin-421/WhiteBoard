@@ -9,13 +9,17 @@ import {
   LuBrush,
   LuEraser,
 } from "react-icons/lu";
-import { FaUndo ,FaRedo, FaDownload   } from "react-icons/fa";
+import {
+  FaUndo,
+  FaRedo,
+  FaDownload
+} from "react-icons/fa";
 import BoardContext from '../../Store/Board/board-context';
 
 const Toolbar = () => {
   const {activeToolItem, handleToolItemClick, undo, redo } = useContext(BoardContext);
 
-  const handleDownloadClick = () => {
+  const handleDownload = () => {
     const canvas = document.getElementById('canvas');
     const data = canvas.toDataURL('image/png');
     const anchor = document.createElement('a');
@@ -74,7 +78,7 @@ const Toolbar = () => {
       <div className={classes.toolItem} onClick={redo}>
         <FaRedo  />
       </div> {/** Redo Tool */}
-      <div className={classes.toolItem} onClick={handleDownloadClick}>
+      <div className={classes.toolItem} onClick={handleDownload}>
         <FaDownload   />
       </div> {/** Download Tool */}
     </div>

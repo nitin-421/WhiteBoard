@@ -1,21 +1,17 @@
-/* .container {
-	padding: 16px;
-} */
-
-.selectOptionContainer.size {
-	top: 38%;
-	left: 16px;
-}
 .selectOptionContainer.stroke {
-  top: 50%;
+	top: 50%;
   left: 16px;
 }
 
 .selectOptionContainer.fill {
-  top: 62%;
+	top: 65%;
   left: 16px;
 }
 
+.selectOptionContainer.size {
+	top: 37%;
+	left: 16px;
+}
 
 
 .selectOptionContainer {
@@ -24,8 +20,8 @@
 	left: 16px;
 	transform: translateY(-50%);
 
-	background: white;
-	border: 1px solid #ccc;
+	background: transparent;
+	border: 3px solid #ccc;
 	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
 	width: fit-content;
@@ -42,6 +38,7 @@
 
 .colorsContainer {
 	display: flex;
+	align-items: center;
 	gap: 6px;
 }
 
@@ -52,6 +49,26 @@
 	cursor: pointer;
 	border: 2px solid transparent;
 	transition: border 0.2s ease;
+}
+
+.colorpicker {
+	padding: 1px;
+	border: 1px solid;
+	width: 42px;
+	height: 42px;
+	border-radius: 3px;
+}
+
+.nofill{
+	background: repeating-conic-gradient(#ccc 0% 25%, transparent 0% 50%) 50% / 10px 10px;
+}
+.nofillactive{
+	padding: 1px;
+	border: 1px solid;
+	width: 42px;
+	height: 42px;
+	border-radius: 3px;
+	background: repeating-conic-gradient(#ccc 0% 25%, transparent 0% 50%) 50% / 10px 10px;
 }
 
 .activeColorBox {
