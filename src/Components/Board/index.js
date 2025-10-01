@@ -11,7 +11,9 @@ function Board() {
   const {elements,
     mouseDownHandler, 
     mouseMoveHandler, 
-    mouseUpHandler } =useContext(BoardContext);
+    mouseUpHandler,
+    undo, redo
+  } =useContext(BoardContext);
 
   const { toolboxState } = useContext(toolboxContext); // stroke/fill color 1 then to BoardProvider
 
@@ -25,6 +27,19 @@ function Board() {
     window.addEventListener("resize", resizeCanvas);
     return () => window.removeEventListener("resize", resizeCanvas);
   }, []);
+
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if ((event.metaKey || event.ctrlKey) && event.key === "z"){
+        undo();
+      }
+      else if ((event.metaKey|| event.ctrlKey)&&event.key=== "y"){
+        redo();
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [undo, redo]);
 
   useLayoutEffect(() => {
     const canvas = canvasRef.current;
